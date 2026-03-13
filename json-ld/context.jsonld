@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcp": "https://cloud.google.com/translate#",
+    "Translation": "gcp:Translation",
+    "sourceLanguageCode": "gcp:sourceLanguageCode",
+    "targetLanguageCode": "gcp:targetLanguageCode",
+    "translatedText": "gcp:translatedText",
+    "detectedLanguageCode": "gcp:detectedLanguageCode",
+    "glossary": "gcp:glossary",
+    "mimeType": "gcp:mimeType",
+    "contents": "gcp:contents",
+    "model": "gcp:model",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-translation/refs/heads/main/json-schema/translation.json",
+  "title": "Translation Request",
+  "description": "Schema for a Google Cloud Translation text translation request.",
+  "type": "object",
+  "required": ["contents", "targetLanguageCode"],
+  "properties": {
+    "contents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The content of the input text to translate."
+    },
+    "mimeType": {
+      "type": "string",
+      "description": "The format of the source text, e.g., text/plain or text/html."
+    },
+    "sourceLanguageCode": {
+      "type": "string",
+      "description": "BCP-47 language code of the input text."
+    },
+    "targetLanguageCode": {
+      "type": "string",
+      "description": "BCP-47 language code of the target translation language."
+    },
+    "glossaryConfig": {
+      "type": "object",
+      "description": "Optional glossary to use for translation.",
+      "properties": {
+        "glossary": {
+          "type": "string",
+          "description": "Resource name of the glossary."
+        },
+        "ignoreCase": {
+          "type": "boolean",
+          "description": "Whether to ignore case when matching glossary terms."
+        }
+      }
+    },
+    "model": {
+      "type": "string",
+      "description": "The model resource name to use for translation."
+    }
+  }
+}

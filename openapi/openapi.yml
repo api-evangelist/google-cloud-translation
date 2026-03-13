@@ -1,0 +1,251 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Translation API
+  description: >-
+    Dynamically translates text between thousands of language pairs using
+    Google's Neural Machine Translation technology.
+  version: v3
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/translate
+servers:
+  - url: https://translation.googleapis.com/v3
+paths:
+  /projects/{projectId}/locations/{location}:translateText:
+    post:
+      operationId: translateText
+      summary: Translate text
+      description: Translates input text from one language to another.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TranslateTextRequest'
+      responses:
+        '200':
+          description: Successful translation response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranslateTextResponse'
+  /projects/{projectId}/locations/{location}:detectLanguage:
+    post:
+      operationId: detectLanguage
+      summary: Detect language
+      description: Detects the language of the provided text.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DetectLanguageRequest'
+      responses:
+        '200':
+          description: Successful language detection response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DetectLanguageResponse'
+  /projects/{projectId}/locations/{location}/supportedLanguages:
+    get:
+      operationId: getSupportedLanguages
+      summary: Get supported languages
+      description: Returns a list of supported languages for translation.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: displayLanguageCode
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with supported languages.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportedLanguages'
+  /projects/{projectId}/locations/{location}/glossaries:
+    get:
+      operationId: listGlossaries
+      summary: List glossaries
+      description: Lists all glossaries for the specified project.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with glossaries list.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  glossaries:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Glossary'
+    post:
+      operationId: createGlossary
+      summary: Create a glossary
+      description: Creates a glossary for custom terminology.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Glossary'
+      responses:
+        '200':
+          description: Successful glossary creation (long-running operation).
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    TranslateTextRequest:
+      type: object
+      required:
+        - contents
+        - targetLanguageCode
+      properties:
+        contents:
+          type: array
+          items:
+            type: string
+        mimeType:
+          type: string
+        sourceLanguageCode:
+          type: string
+        targetLanguageCode:
+          type: string
+        glossaryConfig:
+          type: object
+          properties:
+            glossary:
+              type: string
+    TranslateTextResponse:
+      type: object
+      properties:
+        translations:
+          type: array
+          items:
+            type: object
+            properties:
+              translatedText:
+                type: string
+              detectedLanguageCode:
+                type: string
+    DetectLanguageRequest:
+      type: object
+      properties:
+        content:
+          type: string
+        mimeType:
+          type: string
+    DetectLanguageResponse:
+      type: object
+      properties:
+        languages:
+          type: array
+          items:
+            type: object
+            properties:
+              languageCode:
+                type: string
+              confidence:
+                type: number
+    SupportedLanguages:
+      type: object
+      properties:
+        languages:
+          type: array
+          items:
+            type: object
+            properties:
+              languageCode:
+                type: string
+              displayName:
+                type: string
+              supportSource:
+                type: boolean
+              supportTarget:
+                type: boolean
+    Glossary:
+      type: object
+      properties:
+        name:
+          type: string
+        languagePair:
+          type: object
+          properties:
+            sourceLanguageCode:
+              type: string
+            targetLanguageCode:
+              type: string
+        languageCodesSet:
+          type: object
+          properties:
+            languageCodes:
+              type: array
+              items:
+                type: string
+        inputConfig:
+          type: object
+          properties:
+            gcsSource:
+              type: object
+              properties:
+                inputUri:
+                  type: string
