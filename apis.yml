@@ -1,3 +1,4 @@
+aid: google-cloud-translation
 name: Google Cloud Translation
 description: >-
   Google Cloud Translation API enables dynamic translation of text between
@@ -7,8 +8,9 @@ description: >-
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-translation/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
   - Translation
   - Language
@@ -28,17 +30,37 @@ apis:
       - Language
       - Localization
     properties:
+      - type: Documentation
+        url: https://cloud.google.com/translate/docs/reference/rest
       - type: OpenAPI
         url: openapi/openapi.yml
+      - type: Authentication
+        url: https://cloud.google.com/docs/authentication
+      - type: Getting Started
+        url: https://cloud.google.com/translate/docs/setup
       - type: JSONSchema
         url: json-schema/translation.json
       - type: JSONLD
         url: json-ld/context.jsonld
 common:
-  - type: GettingStarted
+  - type: Portal
+    url: https://cloud.google.com/translate
+  - type: Getting Started
     url: https://cloud.google.com/translate/docs/setup
+  - type: Documentation
+    url: https://cloud.google.com/translate/docs
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/translate/pricing
+  - type: Terms of Service
+    url: https://cloud.google.com/terms
+  - type: Privacy Policy
+    url: https://policies.google.com/privacy
+  - type: Status
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/translate/docs/support
   - type: JSONLD
     url: json-ld/context.jsonld
 maintainers:
