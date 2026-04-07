@@ -40,6 +40,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TranslateTextResponse'
+      tags:
+        - Projects
   /projects/{projectId}/locations/{location}:detectLanguage:
     post:
       operationId: detectLanguage
@@ -69,6 +71,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DetectLanguageResponse'
+      tags:
+        - Projects
   /projects/{projectId}/locations/{location}/supportedLanguages:
     get:
       operationId: getSupportedLanguages
@@ -96,6 +100,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SupportedLanguages'
+      tags:
+        - Projects
   /projects/{projectId}/locations/{location}/glossaries:
     get:
       operationId: listGlossaries
@@ -124,6 +130,8 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Glossary'
+      tags:
+        - Projects
     post:
       operationId: createGlossary
       summary: Google Cloud Translation Create a glossary
@@ -152,6 +160,8 @@ paths:
             application/json:
               schema:
                 type: object
+      tags:
+        - Projects
 components:
   schemas:
     TranslateTextRequest:
@@ -249,3 +259,5 @@ components:
               properties:
                 inputUri:
                   type: string
+tags:
+  - name: Projects

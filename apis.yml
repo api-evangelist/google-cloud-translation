@@ -12,11 +12,11 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Translation
+  - Google Cloud
   - Language
   - Localization
-  - Google Cloud
   - Machine Learning
+  - Translation
 apis:
   - name: Google Cloud Translation API
     description: >-
@@ -26,9 +26,9 @@ apis:
     humanURL: https://cloud.google.com/translate
     baseURL: https://translation.googleapis.com
     tags:
-      - Translation
       - Language
       - Localization
+      - Translation
     properties:
       - type: Documentation
         url: https://cloud.google.com/translate/docs/reference/rest
