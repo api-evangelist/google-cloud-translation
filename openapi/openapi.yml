@@ -14,7 +14,7 @@ paths:
   /projects/{projectId}/locations/{location}:translateText:
     post:
       operationId: translateText
-      summary: Translate text
+      summary: Google Cloud Translation Translate text
       description: Translates input text from one language to another.
       parameters:
         - name: projectId
@@ -43,7 +43,7 @@ paths:
   /projects/{projectId}/locations/{location}:detectLanguage:
     post:
       operationId: detectLanguage
-      summary: Detect language
+      summary: Google Cloud Translation Detect language
       description: Detects the language of the provided text.
       parameters:
         - name: projectId
@@ -72,7 +72,7 @@ paths:
   /projects/{projectId}/locations/{location}/supportedLanguages:
     get:
       operationId: getSupportedLanguages
-      summary: Get supported languages
+      summary: Google Cloud Translation Get supported languages
       description: Returns a list of supported languages for translation.
       parameters:
         - name: projectId
@@ -99,7 +99,7 @@ paths:
   /projects/{projectId}/locations/{location}/glossaries:
     get:
       operationId: listGlossaries
-      summary: List glossaries
+      summary: Google Cloud Translation List glossaries
       description: Lists all glossaries for the specified project.
       parameters:
         - name: projectId
@@ -126,7 +126,7 @@ paths:
                       $ref: '#/components/schemas/Glossary'
     post:
       operationId: createGlossary
-      summary: Create a glossary
+      summary: Google Cloud Translation Create a glossary
       description: Creates a glossary for custom terminology.
       parameters:
         - name: projectId
