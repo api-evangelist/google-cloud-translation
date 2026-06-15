@@ -1,0 +1,624 @@
+{
+  "item": [
+    {
+      "id": "9bb9f272-88ab-42f6-b7aa-d4a60daa0890",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "46ba0f2c-8b25-47b2-bb83-4149412a427a",
+          "name": "Google Cloud Translation Translate text",
+          "request": {
+            "name": "Google Cloud Translation Translate text",
+            "description": {
+              "content": "Translates input text from one language to another.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                "{{location}}:translateText"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"targetLanguageCode\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"sourceLanguageCode\": \"<string>\",\n  \"glossaryConfig\": {\n    \"glossary\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "899c2458-56e7-4280-a310-c4040689cb7a",
+              "name": "Successful translation response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    "{{location}}:translateText"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"targetLanguageCode\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"sourceLanguageCode\": \"<string>\",\n  \"glossaryConfig\": {\n    \"glossary\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"translations\": [\n    {\n      \"translatedText\": \"string\",\n      \"detectedLanguageCode\": \"string\"\n    },\n    {\n      \"translatedText\": \"string\",\n      \"detectedLanguageCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "243bbc86-2ceb-4c71-b6e1-917722e3d041",
+          "name": "Google Cloud Translation Detect language",
+          "request": {
+            "name": "Google Cloud Translation Detect language",
+            "description": {
+              "content": "Detects the language of the provided text.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                "{{location}}:detectLanguage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"<string>\",\n  \"mimeType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f1ab9e29-9c89-4a47-9b47-37b071bf8308",
+              "name": "Successful language detection response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    "{{location}}:detectLanguage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"<string>\",\n  \"mimeType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"languages\": [\n    {\n      \"languageCode\": \"string\",\n      \"confidence\": 5856.751150965879\n    },\n    {\n      \"languageCode\": \"string\",\n      \"confidence\": 7039.760208992197\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07fccd30-30b0-4b0b-aaeb-7eb259af3432",
+          "name": "Google Cloud Translation Get supported languages",
+          "request": {
+            "name": "Google Cloud Translation Get supported languages",
+            "description": {
+              "content": "Returns a list of supported languages for translation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "supportedLanguages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "displayLanguageCode",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "532b7f22-3f8e-4e79-850d-922eaef6670c",
+              "name": "Successful response with supported languages.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "supportedLanguages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "displayLanguageCode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"languages\": [\n    {\n      \"languageCode\": \"string\",\n      \"displayName\": \"string\",\n      \"supportSource\": true,\n      \"supportTarget\": false\n    },\n    {\n      \"languageCode\": \"string\",\n      \"displayName\": \"string\",\n      \"supportSource\": true,\n      \"supportTarget\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c8c99f7-fd0d-4bb8-9b83-44c0901cabd6",
+          "name": "Google Cloud Translation List glossaries",
+          "request": {
+            "name": "Google Cloud Translation List glossaries",
+            "description": {
+              "content": "Lists all glossaries for the specified project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "glossaries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6ef49e2-67fc-4a74-91e0-81f66cbcfde0",
+              "name": "Successful response with glossaries list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "glossaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"glossaries\": [\n    {\n      \"name\": \"string\",\n      \"languagePair\": {\n        \"sourceLanguageCode\": \"string\",\n        \"targetLanguageCode\": \"string\"\n      },\n      \"languageCodesSet\": {\n        \"languageCodes\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"inputConfig\": {\n        \"gcsSource\": {\n          \"inputUri\": \"string\"\n        }\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"languagePair\": {\n        \"sourceLanguageCode\": \"string\",\n        \"targetLanguageCode\": \"string\"\n      },\n      \"languageCodesSet\": {\n        \"languageCodes\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"inputConfig\": {\n        \"gcsSource\": {\n          \"inputUri\": \"string\"\n        }\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28fd8b8d-968a-41ef-bd2d-69ebc4623797",
+          "name": "Google Cloud Translation Create a glossary",
+          "request": {
+            "name": "Google Cloud Translation Create a glossary",
+            "description": {
+              "content": "Creates a glossary for custom terminology.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "glossaries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"languagePair\": {\n    \"sourceLanguageCode\": \"<string>\",\n    \"targetLanguageCode\": \"<string>\"\n  },\n  \"languageCodesSet\": {\n    \"languageCodes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"inputConfig\": {\n    \"gcsSource\": {\n      \"inputUri\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bb71081f-1e26-4531-87f4-a787038c1ca7",
+              "name": "Successful glossary creation (long-running operation).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "glossaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"languagePair\": {\n    \"sourceLanguageCode\": \"<string>\",\n    \"targetLanguageCode\": \"<string>\"\n  },\n  \"languageCodesSet\": {\n    \"languageCodes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"inputConfig\": {\n    \"gcsSource\": {\n      \"inputUri\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://translation.googleapis.com/v3",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "location"
+    }
+  ],
+  "info": {
+    "_postman_id": "5d1e51ca-f3b2-4f21-8560-146c809ac7f4",
+    "name": "Google Cloud Translation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Dynamically translates text between thousands of language pairs using Google's Neural Machine Translation technology.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

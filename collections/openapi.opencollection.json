@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Translation API",
+    "version": "v3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Translation Translate text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://translation.googleapis.com/v3/projects/:projectId/locations/:location:translateText",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Translates input text from one language to another."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Translation Detect language",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://translation.googleapis.com/v3/projects/:projectId/locations/:location:detectLanguage",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Detects the language of the provided text."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Translation Get supported languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://translation.googleapis.com/v3/projects/:projectId/locations/:location/supportedLanguages",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "displayLanguageCode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of supported languages for translation."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Translation List glossaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://translation.googleapis.com/v3/projects/:projectId/locations/:location/glossaries",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all glossaries for the specified project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Translation Create a glossary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://translation.googleapis.com/v3/projects/:projectId/locations/:location/glossaries",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a glossary for custom terminology."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
