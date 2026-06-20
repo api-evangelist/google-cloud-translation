@@ -4,7 +4,7 @@ description: >-
   Google Cloud Translation API enables dynamic translation of text between thousands of language pairs. It supports both
   basic translation using pre-trained Neural Machine Translation models and advanced translation with custom models and
   glossaries for domain-specific terminology.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-translation/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
