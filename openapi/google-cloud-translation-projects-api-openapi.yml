@@ -1,15 +1,15 @@
 openapi: 3.1.0
 info:
-  title: Google Cloud Translation API
-  description: >-
-    Dynamically translates text between thousands of language pairs using
-    Google's Neural Machine Translation technology.
+  title: Google Cloud Translation Projects API
+  description: Dynamically translates text between thousands of language pairs using Google's Neural Machine Translation technology.
   version: v3
   contact:
     name: Google Cloud
     url: https://cloud.google.com/translate
 servers:
-  - url: https://translation.googleapis.com/v3
+- url: https://translation.googleapis.com/v3
+tags:
+- name: Projects
 paths:
   /projects/{projectId}/locations/{location}:translateText:
     post:
@@ -17,16 +17,16 @@ paths:
       summary: Google Cloud Translation Translate text
       description: Translates input text from one language to another.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -41,23 +41,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/TranslateTextResponse'
       tags:
-        - Projects
+      - Projects
   /projects/{projectId}/locations/{location}:detectLanguage:
     post:
       operationId: detectLanguage
       summary: Google Cloud Translation Detect language
       description: Detects the language of the provided text.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -72,27 +72,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/DetectLanguageResponse'
       tags:
-        - Projects
+      - Projects
   /projects/{projectId}/locations/{location}/supportedLanguages:
     get:
       operationId: getSupportedLanguages
       summary: Google Cloud Translation Get supported languages
       description: Returns a list of supported languages for translation.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: displayLanguageCode
-          in: query
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: displayLanguageCode
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response with supported languages.
@@ -101,23 +101,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/SupportedLanguages'
       tags:
-        - Projects
+      - Projects
   /projects/{projectId}/locations/{location}/glossaries:
     get:
       operationId: listGlossaries
       summary: Google Cloud Translation List glossaries
       description: Lists all glossaries for the specified project.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response with glossaries list.
@@ -131,22 +131,22 @@ paths:
                     items:
                       $ref: '#/components/schemas/Glossary'
       tags:
-        - Projects
+      - Projects
     post:
       operationId: createGlossary
       summary: Google Cloud Translation Create a glossary
       description: Creates a glossary for custom terminology.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -161,14 +161,26 @@ paths:
               schema:
                 type: object
       tags:
-        - Projects
+      - Projects
 components:
   schemas:
+    TranslateTextResponse:
+      type: object
+      properties:
+        translations:
+          type: array
+          items:
+            type: object
+            properties:
+              translatedText:
+                type: string
+              detectedLanguageCode:
+                type: string
     TranslateTextRequest:
       type: object
       required:
-        - contents
-        - targetLanguageCode
+      - contents
+      - targetLanguageCode
       properties:
         contents:
           type: array
@@ -185,53 +197,6 @@ components:
           properties:
             glossary:
               type: string
-    TranslateTextResponse:
-      type: object
-      properties:
-        translations:
-          type: array
-          items:
-            type: object
-            properties:
-              translatedText:
-                type: string
-              detectedLanguageCode:
-                type: string
-    DetectLanguageRequest:
-      type: object
-      properties:
-        content:
-          type: string
-        mimeType:
-          type: string
-    DetectLanguageResponse:
-      type: object
-      properties:
-        languages:
-          type: array
-          items:
-            type: object
-            properties:
-              languageCode:
-                type: string
-              confidence:
-                type: number
-    SupportedLanguages:
-      type: object
-      properties:
-        languages:
-          type: array
-          items:
-            type: object
-            properties:
-              languageCode:
-                type: string
-              displayName:
-                type: string
-              supportSource:
-                type: boolean
-              supportTarget:
-                type: boolean
     Glossary:
       type: object
       properties:
@@ -259,5 +224,38 @@ components:
               properties:
                 inputUri:
                   type: string
-tags:
-  - name: Projects
+    DetectLanguageRequest:
+      type: object
+      properties:
+        content:
+          type: string
+        mimeType:
+          type: string
+    SupportedLanguages:
+      type: object
+      properties:
+        languages:
+          type: array
+          items:
+            type: object
+            properties:
+              languageCode:
+                type: string
+              displayName:
+                type: string
+              supportSource:
+                type: boolean
+              supportTarget:
+                type: boolean
+    DetectLanguageResponse:
+      type: object
+      properties:
+        languages:
+          type: array
+          items:
+            type: object
+            properties:
+              languageCode:
+                type: string
+              confidence:
+                type: number
