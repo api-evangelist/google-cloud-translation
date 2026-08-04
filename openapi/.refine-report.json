@@ -1,0 +1,14 @@
+{
+  "provider": "google-cloud-translation",
+  "sources": [
+    "google-cloud-translation-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-translation-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
