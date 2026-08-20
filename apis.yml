@@ -26,6 +26,12 @@ tags:
   - Google Cloud
   - Language
   - Localization
+  - Machine-Learning
+  - Translation
+tags_raw:
+  - Google Cloud
+  - Language
+  - Localization
   - Machine Learning
   - Translation
 apis:
@@ -35,6 +41,8 @@ apis:
   humanURL: https://cloud.google.com/translate
   baseURL: https://translation.googleapis.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
