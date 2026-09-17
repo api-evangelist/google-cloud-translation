@@ -164,74 +164,6 @@ paths:
       - Projects
 components:
   schemas:
-    SupportedLanguages:
-      type: object
-      properties:
-        languages:
-          type: array
-          items:
-            type: object
-            properties:
-              languageCode:
-                type: string
-              displayName:
-                type: string
-              supportSource:
-                type: boolean
-              supportTarget:
-                type: boolean
-    TranslateTextRequest:
-      type: object
-      required:
-      - contents
-      - targetLanguageCode
-      properties:
-        contents:
-          type: array
-          items:
-            type: string
-        mimeType:
-          type: string
-        sourceLanguageCode:
-          type: string
-        targetLanguageCode:
-          type: string
-        glossaryConfig:
-          type: object
-          properties:
-            glossary:
-              type: string
-    DetectLanguageRequest:
-      type: object
-      properties:
-        content:
-          type: string
-        mimeType:
-          type: string
-    TranslateTextResponse:
-      type: object
-      properties:
-        translations:
-          type: array
-          items:
-            type: object
-            properties:
-              translatedText:
-                type: string
-              detectedLanguageCode:
-                type: string
-    DetectLanguageResponse:
-      type: object
-      properties:
-        languages:
-          type: array
-          items:
-            type: object
-            properties:
-              languageCode:
-                type: string
-              confidence:
-                type: number
     Glossary:
       type: object
       properties:
@@ -259,3 +191,71 @@ components:
               properties:
                 inputUri:
                   type: string
+    DetectLanguageRequest:
+      type: object
+      properties:
+        content:
+          type: string
+        mimeType:
+          type: string
+    SupportedLanguages:
+      type: object
+      properties:
+        languages:
+          type: array
+          items:
+            type: object
+            properties:
+              languageCode:
+                type: string
+              displayName:
+                type: string
+              supportSource:
+                type: boolean
+              supportTarget:
+                type: boolean
+    TranslateTextResponse:
+      type: object
+      properties:
+        translations:
+          type: array
+          items:
+            type: object
+            properties:
+              translatedText:
+                type: string
+              detectedLanguageCode:
+                type: string
+    TranslateTextRequest:
+      type: object
+      required:
+      - contents
+      - targetLanguageCode
+      properties:
+        contents:
+          type: array
+          items:
+            type: string
+        mimeType:
+          type: string
+        sourceLanguageCode:
+          type: string
+        targetLanguageCode:
+          type: string
+        glossaryConfig:
+          type: object
+          properties:
+            glossary:
+              type: string
+    DetectLanguageResponse:
+      type: object
+      properties:
+        languages:
+          type: array
+          items:
+            type: object
+            properties:
+              languageCode:
+                type: string
+              confidence:
+                type: number
